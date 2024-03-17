@@ -75,3 +75,18 @@ void reverse(struct node** q){
     }
     *q = prev;
 }
+
+void findMiddle(struct node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    struct node* slow = head;
+    struct node* fast = head;
+
+    while(fast != NULL && fast -> next != NULL){
+        slow = slow -> next;
+        fast = fast -> next -> next;
+    }
+    return slow;
+}
